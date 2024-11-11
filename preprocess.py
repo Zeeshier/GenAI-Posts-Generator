@@ -5,13 +5,13 @@ from langchain_core.output_parsers import JsonOutputParser
 from langchain_core.exceptions import OutputParserException
 
 
-def process_posts(raw_file_paths, processed_file_paths=None):
+def posts(raw_file_paths, processed_file_paths=None):
     for raw_file_path, processed_file_path in zip(raw_file_paths, processed_file_paths):
         with open(raw_file_path, encoding='utf-8') as file:
             posts = json.load(file)
             enriched_posts = []
             for post in posts:
-                metadata = extract_metadata(post['text'])
+                metadata = metadata(post['text'])
                 post_with_metadata = post | metadata
                 enriched_posts.append(post_with_metadata)
 
@@ -25,7 +25,7 @@ def process_posts(raw_file_paths, processed_file_paths=None):
             json.dump(enriched_posts, outfile, indent=4)
 
 
-def extract_metadata(post):
+def metadata(post):
     template = '''
     You are given a LinkedIn post. You need to extract number of lines, language of the post and tags.
     1. Return a valid JSON. No preamble. 
@@ -86,4 +86,4 @@ def get_unified_tags(posts_with_metadata):
 if __name__ == "__main__":
     raw_files = ["Data/hisham_sarwar.json", "Data/irfan_malik.json", "Data/usman_asif.json"]
     processed_files = ["Data/hisham_sarwar_processed.json", "Data/irfan_malik_processed.json", "Data/usman_asif_processed.json"]
-    process_posts(raw_files, processed_files)
+    posts(raw_files, processed_files)
