@@ -2,6 +2,11 @@
 
 This project is a **LinkedIn Post Generator** application that uses an LLM to generate posts based on a selected LinkedIn creator’s style, specific topic, and post length. This app is built using **Streamlit** and allows users to generate LinkedIn posts that align with the style of popular content creators.
 
+*Here is a screenshot of the LinkedIn Post Generator app.*
+
+![LinkedIn Post Generator Preview](GenAI-Posts-Generator\genai post.png)
+
+
 ## 🚀 Features
 - Generate posts according to **Topic (Tags)** and **Length** selected by the user.
 - Choose from multiple LinkedIn content creators (Irfan Malik, Hisham Sarwar, Usman Asif) with each creator's unique post style.
