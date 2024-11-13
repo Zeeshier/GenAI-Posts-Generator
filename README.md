@@ -4,7 +4,7 @@ This project is a **LinkedIn Post Generator** application that uses an LLM to ge
 
 *Here is a screenshot of the LinkedIn Post Generator app.*
 
-![LinkedIn Post Generator Preview](GenAI-Posts-Generator\genai-post.png)
+![LinkedIn Post Generator Preview](genai-post.png)
 
 
 ## 🚀 Features
