@@ -4,7 +4,6 @@ from postgenerate import generate_post
 
 length_options = ["Short", "Medium", "Long"]
 
-# Map of creators 
 creators = {
     "Hisham Sarwar": "Data/hisham_sarwar_processed.json",
     "Irfan Malik": "Data/irfan_malik_processed.json",
