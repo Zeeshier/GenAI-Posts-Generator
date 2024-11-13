@@ -30,7 +30,7 @@ def main():
     tags = fs.get_tags()
     
     st.markdown("""
-    <h2 style='text-align: center; color: #0072B1;'>✨ LinkedIn Post Generator ✨</h2>
+    <h2 style='text-align: center; color: #0072B1;'>LinkedIn Post Generator ✨</h2>
     """, unsafe_allow_html=True)
 
     col1, col2 = st.columns(2)
