@@ -51,9 +51,9 @@ def metadata(post):
 
 def get_unified_tags(posts_with_metadata):
     unique_tags = set()
-    # Loop through each post and extract the tags
+
     for post in posts_with_metadata:
-        unique_tags.update(post['tags'])  # Add the tags to the set
+        unique_tags.update(post['tags']) 
 
     unique_tags_list = ','.join(unique_tags)
 
