@@ -21,17 +21,16 @@ class FewShot:
                 temp_df = pd.json_normalize(posts)
                 temp_df['length'] = temp_df['line_count'].apply(self.categorize_length)
                 
-                # Collect unique tags
                 all_tags = temp_df['tags'].apply(lambda x: x).sum()
                 self.unique_tags.update(all_tags)
                 
-                # Append to the main dataframe
+
                 self.df = pd.concat([self.df, temp_df], ignore_index=True)
 
     def get_filtered_posts(self, length, tag):
         df_filtered = self.df[
-            (self.df['tags'].apply(lambda tags: tag in tags)) &  # Check if tag is present in tags list
-            (self.df['length'] == length)  # Filter by length category
+            (self.df['tags'].apply(lambda tags: tag in tags)) &  
+            (self.df['length'] == length)  
         ]
         return df_filtered.to_dict(orient='records')
 
